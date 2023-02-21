@@ -43,7 +43,7 @@ const Experience = () => {
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
                                 <h4>React</h4>
-                                <small className="text-light">Beginner</small>
+                                <small className="text-light">Intermediate</small>
                             </div>
                         </article>
                         <article className="experience__details">
@@ -56,7 +56,7 @@ const Experience = () => {
                         <article className="experience__details">
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
-                                <h4>Bootstrap</h4>
+                                <h4>Python</h4>
                                 <small className="text-light">Beginner</small>
                             </div>
                         </article>
@@ -105,6 +105,20 @@ const Experience = () => {
                             <div>
                                 <h4>Orange</h4>
                                 <small className="text-light">Beginner</small>
+                            </div>
+                        </article>
+                        <article className="experience__details">
+                            <BsPatchCheckFill className="experience__details-icon" />
+                            <div>
+                                <h4>GitHub</h4>
+                                <small className="text-light">Intermediate</small>
+                            </div>
+                        </article>
+                        <article className="experience__details">
+                            <BsPatchCheckFill className="experience__details-icon" />
+                            <div>
+                                <h4>Postman</h4>
+                                <small className="text-light">Intermediate</small>
                             </div>
                         </article>
                         <article className="experience__details">

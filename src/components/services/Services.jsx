@@ -10,8 +10,8 @@ const Services = () => {
             <div className="container services__container">
                 <article className="service">
                     <div className="service__head">
-                        <h3>IGiftLife Foundation </h3>
-                        <h3>(NGO for Organ Donation)</h3>
+                        <h3>IGiftLife NGO</h3>
+                        <h3>(Graphic/Game Designer)</h3>
                     </div>
                     <ul className="service__list">
                         <li>
@@ -37,7 +37,7 @@ const Services = () => {
                 </article>
                 <article className="service">
                     <div className="service__head">
-                        <h3>Prope Network</h3>
+                        <h3>Prope Network & Cafe Code Brew</h3>
                         <h3>(Freelancing)</h3>
                     </div>
                     <ul className="service__list">
@@ -63,7 +63,8 @@ const Services = () => {
                 </article>
                 <article className="service">
                     <div className="service__head">
-                        <h3>Portfolio Website</h3>
+                        <h3>WEBaniX Pvt. Ltd.</h3>
+                        <h3>(Front-End/Game Developer)</h3>
                     </div>
                     <ul className="service__list">
                         <li>

@@ -8,26 +8,26 @@ import { VscFolderLibrary } from "react-icons/vsc";
 const About = () => {
     return (
         <section id="about">
-            <h5 h5> Get To Know </h5>
-            <h2 h2> About Me </h2>
+            <h5 className="h5"> Get To Know </h5>
+            <h2 className="h2"> About Me </h2>
             <div className="container about__container">
                 <div className="about__me">
                     <div className="about__me-image">
                         <img src={ME} alt="About Image" />
                     </div>
                 </div>
-                <div className="about content">
+                <div className="about__content">
                     <div className="about_cards">
                         <article className="about_card">
                             <FaAward className="about__icon" />
                             <h5> Experience </h5>
-                            <small> 0 Year Working </small>
+                            <small> 4 Months Working </small>
                         </article>
 
                         <article className="about_card">
                             <FiUsers className="about__icon" />
                             <h5> Clients </h5>
-                            <small> 1+ Worldwide </small>
+                            <small> 3+ Worldwide </small>
                         </article>
 
                         <article className="about_card">
@@ -37,11 +37,14 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />
-                        Ambitious and self-esteemed BCA fresher who is capable of applying technical skills for the
-                        improvement of the company. Improved my web development, Graphic and Game designing skills
-                        with the help of graduation in Symbiosis University and looking forward to work in a
-                        competitive environment that can boost my overall learning.
+                        <br />A highly ambitious and self-motivated BCA fresher with a focus on game development, I
+                        am excited to apply my technical skills for improve of your Company. With a graduation from
+                        Symbiosis University, I have honed my web development, graphic design, and game design
+                        skills. Additionally, I am currently exploring the exciting world of AI and digital art
+                        different models like stable diffusion. In fact, I have been selling my digital art on Adobe
+                        Stocks! <br />
+                        With my passion for game development and my diverse skillset, I am confident that I can
+                        bring a fresh perspective to your company.
                     </p>
                     <br />
                     <a href="#contact" className="btn btn-primary">

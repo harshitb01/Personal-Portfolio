@@ -44,18 +44,21 @@
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
-.about__card h5 {
+.about_card h5 {
     font-size: 0.95rem;
 }
 .about_card small {
     font-size: 0.7rem;
     color: var(--color-light);
 }
-.about_content p {
+.about__content p {
     margin: 2rem 0 2.6rem;
     color: var(--color-light);
 }
 @media screen and (max-width: 1024px) {
+    .about {
+        width: 80%;
+    }
     .about__container {
         grid-template-columns: 1fr;
         gap: 0;
@@ -70,18 +73,29 @@
 }
 
 @media screen and (max-width: 600px) {
+    .about {
+        width: 80%;
+    }
     .about__me {
         width: 65%;
-        margin: 0 auto 3rem;
+        margin: 0 auto 3rem 1.5rem;
     }
-    .about__cards {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+    .about_cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0rem;
+        margin-right: 6rem;
+    }
+    .about_card {
+        width: 90%;
+        padding: 1.5rem;
     }
     .about__content {
         text-align: center;
     }
     .about__content p {
-        margin: 1.5rem 0;
+        margin-right: 6rem;
+    }
+    .btn-primary {
+        margin-right: 6rem;
     }
 }
