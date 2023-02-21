@@ -63,4 +63,8 @@ header {
     .scroll__down {
         display: none;
     }
+    .cta {
+        width: 125%;
+        gap: 1rem;
+    }
 }
