@@ -3,7 +3,7 @@ import "./portfolio.css";
 import IMG1 from "../../assets/portfolio1.png";
 import IMG2 from "../../assets/portfolio2.jpg";
 import IMG3 from "../../assets/portfolio3.png";
-import IMG4 from "../../assets/portfolio4.jpg";
+import IMG4 from "../../assets/portfolio4.png";
 import IMG5 from "../../assets/portfolio5.png";
 import IMG6 from "../../assets/portfolio6.png";
 
@@ -32,9 +32,9 @@ const data = [
     {
         id: 4,
         image: IMG4,
-        title: "Registration Form Using Django",
-        github: "https://github.com/harshitb01/Djanjo_project",
-        demo: "https://jmp.sh/uhEPJp5",
+        title: "Shooter mini games using UPBGE",
+        github: "https://github.com/harshitb01/Blender",
+        demo: "https://jmp.sh/TwqH14C0",
     },
     {
         id: 5,

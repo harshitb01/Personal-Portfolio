@@ -37,14 +37,13 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />A highly ambitious and self-motivated BCA fresher with a focus on game development, I
-                        am excited to apply my technical skills for improve of your Company. With a graduation from
-                        Symbiosis University, I have honed my web development, graphic design, and game design
-                        skills. Additionally, I am currently exploring the exciting world of AI and digital art
-                        different models like stable diffusion. In fact, I have been selling my digital art on Adobe
-                        Stocks! <br />
-                        With my passion for game development and my diverse skillset, I am confident that I can
-                        bring a fresh perspective to your company.
+                        <br />Motivated BCA fresher with a keen interest in game development
+                        and a successful 6-month internship experience. Proficient in
+                        Unity Engine, C#, and game design, I have created engaging
+                        educational arcade games during my internship. My portfolio
+                        showcases a browser game using JavaScript, a Unity-based DNA-changing game, and an API-driven quiz game with WebSockets
+                        integration. Eager to contribute my technical skills and creativity
+                        to a challenging role in game development.
                     </p>
                     <br />
                     <a href="#contact" className="btn btn-primary">

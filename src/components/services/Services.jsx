@@ -59,16 +59,16 @@ const Services = () => {
                 <article className="service">
                     <div className="service__head">
                         <h3>WEBaniX Pvt. Ltd.</h3>
-                        <h3>(Front-End/Game Developer)</h3>
+                        <h3>(Game Developer)</h3>
                     </div>
                     <ul className="service__list">
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Developed arcade games using Unity with engaging gameplay and visuals.</p>
+                            <p>Developed educational arcade games for gaming parlour using Unity</p>
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Collaborated with designers and developers for user interface and experience.</p>
+                            <p>Created a browser game using JavaScript, a Unity-based DNA-changing game, and an API-driven quiz game.</p>
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
@@ -76,7 +76,7 @@ const Services = () => {
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Implemented clean, well-documented, and maintainable code for high-quality games.</p>
+                            <p>Leveraged WebSockets and API's for seamless integration with Arduino in the quiz game.</p>
                         </li>
                     </ul>
                 </article>

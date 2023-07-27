@@ -14,14 +14,14 @@ const Experience = () => {
                         <article className="experience__details">
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
-                                <h4>HTML</h4>
+                                <h4>C#</h4>
                                 <small className="text-light">Experienced</small>
                             </div>
                         </article>
                         <article className="experience__details">
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
-                                <h4>CSS</h4>
+                                <h4>HTML/CSS</h4>
                                 <small className="text-light">Experienced</small>
                             </div>
                         </article>
@@ -83,7 +83,7 @@ const Experience = () => {
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
                                 <h4>Unity Engine</h4>
-                                <small className="text-light">Intermediate</small>
+                                <small className="text-light">Experienced</small>
                             </div>
                         </article>
                         <article className="experience__details">
@@ -103,8 +103,8 @@ const Experience = () => {
                         <article className="experience__details">
                             <BsPatchCheckFill className="experience__details-icon" />
                             <div>
-                                <h4>Orange</h4>
-                                <small className="text-light">Beginner</small>
+                                <h4>UPBGE</h4>
+                                <small className="text-light">Intermediate</small>
                             </div>
                         </article>
                         <article className="experience__details">
