@@ -4,8 +4,8 @@ import IMG1 from "../../assets/portfolio1.png";
 import IMG2 from "../../assets/portfolio2.jpg";
 import IMG3 from "../../assets/portfolio3.png";
 import IMG4 from "../../assets/portfolio4.png";
-import IMG5 from "../../assets/portfolio5.png";
-import IMG6 from "../../assets/portfolio6.png";
+import IMG5 from "../../assets/Monster.png";
+import IMG6 from "../../assets/swtq.png";
 
 const data = [
     {
@@ -39,16 +39,16 @@ const data = [
     {
         id: 5,
         image: IMG5,
-        title: "Instagram Clone Using HTML and CSS",
-        github: "https://github.com/harshitb01/InstagramClone",
-        demo: "https://jmp.sh/dyWbRSx",
+        title: "Monter Maker - A DNA changing Arcade Game",
+        github: "https://github.com/harshitb01",
+        demo: "https://jmp.sh/Httif8PV",
     },
     {
         id: 6,
         image: IMG6,
-        title: "Weather App Using JavaScript API",
-        github: "https://github.com/harshitb01/Weather-App",
-        demo: "https://youtu.be/DPN2_32XsnU",
+        title: "So What's the question? - An API Based Arcade Game",
+        github: "https://github.com/harshitb01",
+        demo: "https://jmp.sh/nGu91V6Z",
     },
 ];
 
