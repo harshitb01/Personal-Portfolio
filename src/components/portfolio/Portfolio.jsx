@@ -48,7 +48,7 @@ const data = [
         image: IMG6,
         title: "So What's the question? - An API Based Arcade Game",
         github: "https://github.com/harshitb01",
-        demo: "https://jmp.sh/nGu91V6Z",
+        demo: "https://jmp.sh/r4xykW3c",
     },
 ];
 
