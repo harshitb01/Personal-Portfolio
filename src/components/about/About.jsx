@@ -27,7 +27,7 @@ const About = () => {
                         <article className="about_card">
                             <FaAward className="about__icon" />
                             <h5>Experience</h5>
-                            <small> 6 Months Working </small>
+                            <small> 1+ Years Working </small>
                         </article>
 
                         <article className="about_card">
@@ -37,13 +37,13 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />Motivated BCA fresher with a keen interest in game development
-                        and a successful 6-month internship experience. Proficient in
-                        Unity Engine, C#, and game design, I have created engaging
-                        educational arcade games during my internship. My portfolio
-                        showcases a browser game using JavaScript, a Unity-based DNA-changing game, and an API-driven quiz game with WebSockets
-                        integration. Eager to contribute my technical skills and creativity
-                        to a challenging role in game development.
+                        <br />Skilled Unity Game Developer with a strong passion for creating
+                        engaging and educational games. Successfully completed a
+                        6-month internship and now thriving as a full-time game developer
+                        at Webanix Pvt Ltd for the past 10 months. Skilled in a wide range
+                        of game types, including DNA-altering simulations, gene-mutation games, and API-driven quiz games with WebSocket
+                        integration. Ready to bring my technical expertise and creativity
+                        to your exciting projects.
                     </p>
                     <br />
                     <a href="#contact" className="btn btn-primary">
