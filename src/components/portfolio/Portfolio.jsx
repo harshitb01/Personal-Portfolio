@@ -11,9 +11,9 @@ const data = [
     {
         id: 1,
         image: IMG1,
-        title: "Theme based Shopping Website (Hogwarts Hub)",
-        github: "https://github.com/harshitb01/Hogwarts/tree/main/Hogwarts_land",
-        demo: "https://jmp.sh/Q9iMB2X",
+        title: "Natural Mutations - A Touchscreen game based on Genetic Algorithm",
+        github: "https://github.com/harshitb01",
+        demo: "https://jmp.sh/KPvOnTRj",
     },
     {
         id: 2,
@@ -39,14 +39,14 @@ const data = [
     {
         id: 5,
         image: IMG5,
-        title: "Monter Maker - A DNA changing Arcade Game",
+        title: "Monter Maker - A DNA changing Arduino based Arcade Game",
         github: "https://github.com/harshitb01",
         demo: "https://jmp.sh/Httif8PV",
     },
     {
         id: 6,
         image: IMG6,
-        title: "So What's the question? - An API Based Arcade Game",
+        title: "So What's the question? - An API Based Multiplayer Arcade Game",
         github: "https://github.com/harshitb01",
         demo: "https://jmp.sh/Byp9sgPI",
     },
