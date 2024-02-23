@@ -3,7 +3,7 @@ import "./portfolio.css";
 import IMG1 from "../../assets/portfolio1.png";
 import IMG2 from "../../assets/portfolio2.jpg";
 import IMG3 from "../../assets/portfolio3.png";
-import IMG4 from "../../assets/portfolio4.png";
+import IMG4 from "../../assets/portfolio4.jpeg";
 import IMG5 from "../../assets/Monster.png";
 import IMG6 from "../../assets/swtq.png";
 
@@ -32,9 +32,9 @@ const data = [
     {
         id: 4,
         image: IMG4,
-        title: "Shooter mini games using UPBGE",
-        github: "https://github.com/harshitb01/Blender",
-        demo: "https://jmp.sh/TwqH14C0",
+        title: "Tic Tac Toe Mobile Game (Using Unity Relay)",
+        github: "https://github.com/harshitb01/TicTacToe",
+        demo: "https://github.com/harshitb01/TicTacToe/blob/main/TicTacToe%20-%20The%20Game.apk",
     },
     {
         id: 5,
