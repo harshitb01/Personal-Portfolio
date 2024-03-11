@@ -40,7 +40,7 @@ const About = () => {
                         <br />Skilled Unity Game Developer with a strong passion for creating
                         engaging and educational games. Successfully completed a
                         6-month internship and now thriving as a full-time game developer
-                        at Webanix Pvt Ltd for the past 10 months. Skilled in a wide range
+                        at Webanix Pvt Ltd for the past 1 year. Skilled in a wide range
                         of game types, including DNA-altering simulations, gene-mutation games, and API-driven quiz games with WebSocket
                         integration. Ready to bring my technical expertise and creativity
                         to your exciting projects.
