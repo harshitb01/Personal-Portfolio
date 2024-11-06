@@ -34,25 +34,25 @@ const Services = () => {
                 </article>
                 <article className="service">
                     <div className="service__head">
-                        <h3>Freelancing</h3>
-                        <h3>(Graphic Designer)</h3>
+                        <h3>Dread Manor</h3>
+                        <h3>(Indie Game Launch)</h3>
                     </div>
                     <ul className="service__list">
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Designed logos for Prope Network, Nearbii App, and Cafe Code Brew.</p>
+                            <p>Conceptualized, designed, and developed an indie horror mobile game using Unity.</p>
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Iterated designs based on feedback to ensure client satisfaction.</p>
+                            <p>Successfully launched on the Google Play Store, receiving positive feedback from players.</p>
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Created scalable logos using Adobe Photoshop for marketing collateral.</p>
+                            <p>Designed intricate puzzle mechanics and atmospheric visuals to enhance player immersion.</p>
                         </li>
                         <li>
                             <BiCheck className="service__list-icon" />
-                            <p>Provided clients with editable logo files for future modifications.</p>
+                            <p>Implemented an engaging solo mode with unique environments and challenging escape room elements.</p>
                         </li>
                     </ul>
                 </article>

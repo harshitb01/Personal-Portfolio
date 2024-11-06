@@ -21,13 +21,13 @@ const About = () => {
                         <article className="about_card">
                             <FiUsers className="about__icon" />
                             <h5> Clients </h5>
-                            <small> 3+ Worldwide </small>
+                            <small> 5+ Worldwide </small>
                         </article>
 
                         <article className="about_card">
                             <FaAward className="about__icon" />
                             <h5>Experience</h5>
-                            <small> 1+ Years Working </small>
+                            <small> 2+ Years Working </small>
                         </article>
 
                         <article className="about_card">
@@ -37,13 +37,12 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />Skilled Unity Game Developer with a strong passion for creating
-                        engaging and educational games. Successfully completed a
-                        6-month internship and now thriving as a full-time game developer
-                        at Webanix Pvt Ltd for the past 1 year. Skilled in a wide range
-                        of game types, including DNA-altering simulations, gene-mutation games, and API-driven quiz games with WebSocket
-                        integration. Ready to bring my technical expertise and creativity
-                        to your exciting projects.
+                        <br />Experienced Unity Game Developer with nearly 2 years of expertise, 
+                        including a successful launch of an indie mobile horror game on the Play Store. 
+                        Previously interned and now thriving full-time at Webanix Pvt Ltd, 
+                        specializing in diverse game genres like DNA-altering simulations, 
+                        gene-mutation games, and API-driven quiz games with WebSocket integration. 
+                        Eager to bring creativity and technical depth to impactful projects at leading gaming studios.
                     </p>
                     <br />
                     <a href="#contact" className="btn btn-primary">
