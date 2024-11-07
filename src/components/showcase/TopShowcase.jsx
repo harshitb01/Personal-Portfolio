@@ -5,9 +5,9 @@ const data = [
     {
         id: 1,
         // image: IMG1,
-        videoId: "JPTRriUewt8",
+        videoId: "XOcYilxLvxk",
         title: "Dread Manor - Unity based horror puzzle solving mobile game!",
-        // github: "https://github.com/harshitb01",
+        playstore: "https://play.google.com/store/apps/details?id=com.LumosRelicGames.DreadManor&pcampaignid=web_share",
         demo: "https://jmp.sh/3pIiKvkM",
     },
 ];
@@ -52,7 +52,7 @@ const TopShowcase = () => {
             <h5>Showcases</h5>
             <h2>Top Showcase</h2>
             <div className="container showcase__container">
-                {data.map(({ id, videoId, title, github, demo }, index) => (
+                {data.map(({ id, videoId, title, playstore, demo }, index) => (
                     <article key={id} className="showcase__item">
                         <div className="showcase__item-image">
                             <iframe
@@ -66,9 +66,9 @@ const TopShowcase = () => {
                         </div>
                         <h3>{title}</h3>
                         <div className="showcase__item-cta">
-                            {/* <a href={github} className="btn" target="_blank" rel="noreferrer">
-                                Github
-                            </a> */}
+                            <a href={playstore} className="btn" target="_blank" rel="noreferrer">
+                                PlayStore
+                            </a>
                             <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
                                 Documentation
                             </a>

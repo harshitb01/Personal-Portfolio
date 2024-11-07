@@ -39,6 +39,13 @@
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
+    .showcase__item-cta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 5rem;
+        justify-content:center;
+    }
 }
 
 @media screen and (max-width: 600px) {
