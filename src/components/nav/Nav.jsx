@@ -6,6 +6,7 @@ import { BiBook } from "react-icons/bi";
 import { MdOutlinePermContactCalendar } from "react-icons/md";
 import { RiServiceLine } from "react-icons/ri";
 import { RiLinksLine } from "react-icons/ri";
+import { FaGamepad } from "react-icons/fa";
 
 const Nav = () => {
     const [activeNav, setActiveNav] = useState("#");
@@ -37,11 +38,25 @@ const Nav = () => {
                 <AiOutlineHome />
             </a>
             <a
+                href="#topShowcase"
+                onClick={() => setActiveNav("#topShowcase")}
+                className={activeNav === "#topShowcase" ? "active" : ""}
+            >
+                <FaGamepad />
+            </a>
+            <a
                 href="#about"
                 onClick={() => setActiveNav("#about")}
                 className={activeNav === "#about" ? "active" : ""}
             >
                 <AiOutlineUser />
+            </a>
+            <a
+                href="#portfolio"
+                onClick={() => setActiveNav("#portfolio")}
+                className={activeNav === "#portfolio" ? "active" : ""}
+            >
+                <RiLinksLine />
             </a>
             <a
                 href="#experience"
@@ -56,13 +71,6 @@ const Nav = () => {
                 className={activeNav === "#services" ? "active" : ""}
             >
                 <RiServiceLine />
-            </a>
-            <a
-                href="#portfolio"
-                onClick={() => setActiveNav("#portfolio")}
-                className={activeNav === "#portfolio" ? "active" : ""}
-            >
-                <RiLinksLine />
             </a>
             <a
                 href="#contact"

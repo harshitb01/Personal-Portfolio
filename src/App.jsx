@@ -6,6 +6,7 @@ import Experience from "./components/experience/Experience";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Portfolio";
 import Showcase from "./components/showcase/TopShowcase";
+import ShowcaseBriefing from "./components/showcase/TopShowcaseBriefing";
 // import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
@@ -16,6 +17,7 @@ const App = () => {
             <Header></Header>
             <Nav></Nav>
             <Showcase></Showcase>
+            <ShowcaseBriefing></ShowcaseBriefing>
             <About></About>
             <Portfolio></Portfolio>
             <Experience></Experience>

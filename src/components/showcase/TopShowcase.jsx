@@ -48,7 +48,7 @@ const TopShowcase = () => {
     }, []);
 
     return (
-        <section id="showcase">
+        <section id="topShowcase">
             <h5>Showcases</h5>
             <h2>Top Showcase</h2>
             <div className="container showcase__container">
