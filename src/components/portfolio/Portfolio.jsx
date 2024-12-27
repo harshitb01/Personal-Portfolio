@@ -1,54 +1,54 @@
 import React from "react";
 import "./portfolio.css";
-import IMG1 from "../../assets/portfolio1.png";
-import IMG2 from "../../assets/portfolio2.jpg";
+import IMG1 from "../../assets/NM.jpeg";
+import IMG2 from "../../assets/Crispr.jpeg";
 import IMG3 from "../../assets/portfolio3.png";
-import IMG4 from "../../assets/portfolio4.jpeg";
-import IMG5 from "../../assets/Monster.png";
-import IMG6 from "../../assets/swtq.png";
+import IMG4 from "../../assets/Balancing.jpeg";
+import IMG5 from "../../assets/Monster.jpeg";
+import IMG6 from "../../assets/SWTQ.jpeg";
 
 const data = [
     {
         id: 1,
-        image: IMG1,
-        title: "Natural Mutations - A Touchscreen game based on Genetic Algorithm",
-        github: "https://github.com/harshitb01",
-        demo: "https://jmp.sh/KPvOnTRj",
+        image: IMG4,
+        title: "The Balancing Game - Server based 5 player touchscreen game on saving environment (Using MonoGame)",
+        github: "https://jmp.sh/WOGr0K2A",
+        demo: "https://jmp.sh/jAHatXIs",
     },
     {
         id: 2,
         image: IMG6,
-        title: "So What's the question? - An API Based Multiplayer Arcade Game",
-        github: "https://github.com/harshitb01",
-        demo: "https://jmp.sh/Byp9sgPI",
+        title: "So What's the question? - An API based multiplayer arcade game (Using Unity)",
+        github: "https://jmp.sh/Byp9sgPI",
+        demo: "https://jmp.sh/kY3p8ya5",
     },
     {
         id: 3,
         image: IMG5,
-        title: "Monter Maker - A DNA changing Arduino based Arcade Game",
-        github: "https://github.com/harshitb01",
-        demo: "https://jmp.sh/Httif8PV",
+        title: "Monter Maker - A DNA changing arduino based arcade game (Using Unity)",
+        github: "https://jmp.sh/Httif8PV",
+        demo: "https://jmp.sh/bsGrjMIB",
     },
     {
         id: 4,
-        image: IMG4,
-        title: "Tic Tac Toe Mobile Game (Using Unity Relay)",
-        github: "https://github.com/harshitb01/TicTacToe",
-        demo: "https://github.com/harshitb01/TicTacToe/blob/main/TicTacToe%20-%20The%20Game.apk",
+        image: IMG1,
+        title: "Natural Mutations - A touchscreen game based on genetic algorithm (Using Unity)",
+        github: "https://jmp.sh/KPvOnTRj",
+        demo: "https://jmp.sh/rez6uH1f",
     },
     {
         id: 5,
         image: IMG3,
-        title: "IGift Life Mobile Game (Using Unity Engine)",
-        github: "https://github.com/harshitb01/IGiftLife_Game",
-        demo: "https://jmp.sh/L3L4iD2",
+        title: "IGift Life Game - A NGO mobile game on organ donation (Using Unity)",
+        github: "https://jmp.sh/L3L4iD2",
+        demo: "https://github.com/harshitb01/IGiftLife_Game",
     },
     {
         id: 6,
         image: IMG2,
-        title: "Ping-Pong Game (Using OpenGL)",
-        github: "https://github.com/harshitb01/OpenGL/blob/main/Ping-Pong.c",
-        demo: "https://jmp.sh/K3cC4Tm",
+        title: "Crispr - A dual screen arduino based game (Using MonoGame)",
+        github: "https://jmp.sh/oLCl3vmt",
+        demo: "https://jmp.sh/gqN0CJZ4",
     },
 ];
 
@@ -67,10 +67,10 @@ const Portfolio = () => {
                             <h3>{title}</h3>
                             <div className="portfolio__item-cta">
                                 <a href={github} className="btn" target="_blank" rel="noreferrer">
-                                    Github
+                                    Demo
                                 </a>
                                 <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
-                                    Demo / Documentation
+                                    Live Demo
                                 </a>
                             </div>
                         </article>
