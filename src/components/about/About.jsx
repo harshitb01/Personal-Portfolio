@@ -37,9 +37,8 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />Experienced Unity Game Developer with nearly 2 years of expertise, 
-                        including a successful launch of an indie mobile horror game on the Play Store. 
-                        Previously interned and now thriving full-time at Webanix Pvt Ltd, 
+                        <br />Experienced Unity Game Developer with a successful launch of 
+                        an indie mobile horror game on the Play Store. Working full-time at Webanix Pvt Ltd, 
                         specializing in diverse game genres like DNA-altering simulations, 
                         gene-mutation games, and API-driven quiz games with WebSocket integration. 
                         Eager to bring creativity and technical depth to impactful projects at leading gaming studios.

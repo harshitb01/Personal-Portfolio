@@ -2,7 +2,7 @@ import React from "react";
 import "./portfolio.css";
 import IMG1 from "../../assets/NM.jpeg";
 import IMG2 from "../../assets/Crispr.jpeg";
-import IMG3 from "../../assets/portfolio3.png";
+import IMG3 from "../../assets/cover2.png";
 import IMG4 from "../../assets/Balancing.jpeg";
 import IMG5 from "../../assets/Monster.jpeg";
 import IMG6 from "../../assets/SWTQ.jpeg";
@@ -39,9 +39,9 @@ const data = [
     {
         id: 5,
         image: IMG3,
-        title: "IGift Life Game - A NGO mobile game on organ donation (Using Unity)",
-        github: "https://jmp.sh/L3L4iD2",
-        demo: "https://github.com/harshitb01/IGiftLife_Game",
+        title: "Brackeys Game Jam 2025.2 — You Cannot Go Back!",
+        github: "https://itch.io/jam/brackeys-14/rate/3849706",
+        demo: "https://tihan.itch.io/you-cannot-go-back",
     },
     {
         id: 6,
