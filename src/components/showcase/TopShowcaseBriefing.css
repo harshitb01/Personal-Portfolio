@@ -35,17 +35,144 @@
     margin-bottom: 1rem;
     justify-content: center;
 }
+/* Points panel + animation + icon style (PS5-themed) */
 .showcaseBriefing__points {
-    margin-top: 10px;
-    padding-left: 5px;
-    list-style: disc; 
-    font-size: 0.95rem;
-    color: white;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--color-bg-variant);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-light);
+    text-align: left;
+    list-style: none;
 }
+
+/* list items base state */
 .showcaseBriefing__points li {
-    margin-bottom: 8px;
-    line-height: 1.4;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    margin-bottom: 0.9rem;
+    padding: 0.15rem 0;
+    opacity: 0;
+    transform: translateY(12px) scale(1);
+    line-height: 1.45;
 }
+
+/* point icon styles */
+.point-icon {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: #fff;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-variant));
+    box-shadow: 0 8px 22px rgba(0,118,255,0.12);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms;
+}
+
+/* point text */
+.point-text {
+    color: var(--color-light);
+    font-size: 0.98rem;
+}
+
+/* ----- Scroll reveal (existing behavior) ----- */
+.showcaseBriefing__item.revealed .showcaseBriefing__points li {
+    animation-name: slideUp;
+    animation-duration: 520ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: calc(var(--i) * 100ms);
+}
+
+/* remove blur on iframe — keep it crisp */
+.showcaseBriefing__item.revealed .showcaseBriefing__item-image iframe,
+.showcaseBriefing__item .showcaseBriefing__item-image iframe {
+    transform: none;
+    filter: none;
+    transition: transform 420ms cubic-bezier(.2,.9,.2,1), filter 420ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* keyframes for slideUp (reveal) */
+@keyframes slideUp {
+    0%   { opacity: 0; transform: translateY(12px) scale(1); }
+    60%  { opacity: 1; transform: translateY(-6px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ----- Hover animation: animates when mouse hovers the points container ----- */
+/* triggers a pop/stagger that complements the scroll reveal */
+.showcaseBriefing__points:hover li {
+    animation-name: hoverPop;
+    animation-duration: 420ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: calc(var(--i) * 70ms);
+}
+
+/* smaller, snappier pop for hovered single item (optional finer control)
+   also allow hovering an individual li to give immediate feedback */
+.showcaseBriefing__points li:hover {
+    animation-name: hoverSingle;
+    animation-duration: 320ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: 0ms;
+}
+
+/* Hover keyframes */
+@keyframes hoverPop {
+    0%   { opacity: 1; transform: translateY(0) scale(1); }
+    40%  { transform: translateY(-8px) scale(1.03); }
+    100% { transform: translateY(0) scale(1); }
+}
+@keyframes hoverSingle {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(-6px) scale(1.04); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Icon reaction on hover (container-level and item-level) */
+.showcaseBriefing__points:hover .point-icon,
+.showcaseBriefing__points li:hover .point-icon {
+    transform: scale(1.12);
+    box-shadow: 0 12px 32px rgba(0,118,255,0.18);
+}
+
+/* reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+    .showcaseBriefing__points li,
+    .showcaseBriefing__points:hover li,
+    .showcaseBriefing__item.revealed .showcaseBriefing__points li {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .point-icon { transform: none !important; box-shadow: none !important; }
+}
+
+/* reduced motion fallback */
+@media (prefers-reduced-motion: reduce) {
+    .showcaseBriefing__item.revealed .showcaseBriefing__points li {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    .showcaseBriefing__item.revealed .showcaseBriefing__item-image iframe {
+        transform: none;
+        filter: none;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .showcaseBriefing__container {
         grid-template-columns: 1fr 1fr;
@@ -58,6 +185,9 @@
         margin-left: 5rem;
         justify-content:center;
     }
+    .showcaseBriefing__points { font-size: 0.98rem; padding: 0.85rem; }
+    .point-icon { min-width: 22px; height: 22px; font-size: 0.8rem; }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -71,4 +201,7 @@
     .btn {
         flex-direction: row;
     }
+    .showcaseBriefing__points { font-size: 0.98rem; padding: 0.85rem; }
+    .point-icon { min-width: 20px; height: 20px; font-size: 0.75rem; margin-top: 0.2rem; }
+    .showcaseBriefing__points li::before { top: 0.5rem; width: 7px; height: 7px; }
 }

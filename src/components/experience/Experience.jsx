@@ -1,138 +1,108 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./experience.css";
-import { BsPatchCheckFill } from "react-icons/bs";
+import { BiCheck } from "react-icons/bi";
+
+const languages = [
+  { name: "C#", level: "Experienced" },
+  { name: "HTML/CSS", level: "Experienced" },
+  { name: "JavaScript", level: "Intermediate" },
+  { name: "PHP", level: "Intermediate" },
+  { name: "React", level: "Intermediate" },
+  { name: "MySQL", level: "Intermediate" },
+  { name: "Python", level: "Beginner" },
+  { name: "Java", level: "Intermediate" },
+];
+
+const tools = [
+  { name: "Blender", level: "Experienced" },
+  { name: "Unity Engine", level: "Experienced" },
+  { name: "Adobe Photoshop", level: "Intermediate" },
+  { name: "Adobe Premiere", level: "Intermediate" },
+  { name: "UPBGE", level: "Intermediate" },
+  { name: "GitHub", level: "Intermediate" },
+  { name: "Postman", level: "Intermediate" },
+  { name: "Microsoft Excel", level: "Intermediate" },
+];
 
 const Experience = () => {
-    return (
-        <section id="experience">
-            <h5>What skill I Have</h5>
-            <h2>My Skills</h2>
-            <div className="container experience__container">
-                <div className="experience__language">
-                    <h3>Languages Known</h3>
-                    <div className="experinece__content">
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>C#</h4>
-                                <small className="text-light">Experienced</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>HTML/CSS</h4>
-                                <small className="text-light">Experienced</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>JavaScript</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>PHP</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>React</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>MySQL</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Python</h4>
-                                <small className="text-light">Beginner</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Java</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                    </div>
+  useEffect(() => {
+    const options = { threshold: 0.25 };
+
+    const listObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const panel = entry.target;
+        if (!panel) return;
+
+        if (entry.isIntersecting) {
+          panel.classList.add("revealed");
+        } else {
+          panel.classList.remove("revealed");
+          // force reflow so animation can replay next time
+          // eslint-disable-next-line no-unused-expressions
+          void panel.offsetWidth;
+        }
+      });
+    }, options);
+
+    const panels = document.querySelectorAll(".experience__container > div");
+    panels.forEach((p) => listObserver.observe(p));
+
+    return () => {
+      panels.forEach((p) => listObserver.unobserve(p));
+    };
+  }, []);
+
+  return (
+    <section id="experience">
+      <h5>What skill I Have</h5>
+      <h2>My Skills</h2>
+      <div className="container experience__container">
+        <div className="experience__language glass-panel">
+          <h3>Languages Known</h3>
+
+          <div className="experinece__content">
+            {languages.map((lang, i) => (
+              <article
+                className="experience__details"
+                key={lang.name}
+                style={{ ["--i"]: i }}
+              >
+                <span className="point-icon">
+                  <BiCheck />
+                </span>
+                <div>
+                  <h4>{lang.name}</h4>
+                  <small className="text-light">{lang.level}</small>
                 </div>
-                <div className="experience__tools">
-                    <h3>Tools Known</h3>
-                    <div className="experinece__content">
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Blender</h4>
-                                <small className="text-light">Experienced</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Unity Engine</h4>
-                                <small className="text-light">Experienced</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Adobe Photoshop</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Adobe Premier</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>UPBGE</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>GitHub</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Postman</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                        <article className="experience__details">
-                            <BsPatchCheckFill className="experience__details-icon" />
-                            <div>
-                                <h4>Microsoft Excel</h4>
-                                <small className="text-light">Intermediate</small>
-                            </div>
-                        </article>
-                    </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="experience__tools glass-panel">
+          <h3>Tools Known</h3>
+
+          <div className="experinece__content">
+            {tools.map((t, i) => (
+              <article
+                className="experience__details"
+                key={t.name}
+                style={{ ["--i"]: i }}
+              >
+                <span className="point-icon">
+                  <BiCheck />
+                </span>
+                <div>
+                  <h4>{t.name}</h4>
+                  <small className="text-light">{t.level}</small>
                 </div>
-            </div>
-        </section>
-    );
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Experience;

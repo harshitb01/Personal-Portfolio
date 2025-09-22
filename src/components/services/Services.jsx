@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./services.css";
 import { BiCheck } from "react-icons/bi";
 
 const Services = () => {
+    useEffect(() => {
+        const options = { threshold: 0.25 };
+
+        const listObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const listEl = entry.target;
+                const article = listEl.closest(".service");
+                if (!article) return;
+
+                if (entry.isIntersecting) {
+                    article.classList.add("revealed");
+                } else {
+                    article.classList.remove("revealed");
+                    // force reflow to allow replay
+                    // eslint-disable-next-line no-unused-expressions
+                    void listEl.offsetWidth;
+                }
+            });
+        }, options);
+
+        const lists = document.querySelectorAll(".service__list");
+        lists.forEach((list) => listObserver.observe(list));
+
+        return () => {
+            lists.forEach((list) => listObserver.unobserve(list));
+        };
+    }, []);
+
     return (
         <section id="services">
             <h5>What I Offer</h5>
@@ -14,68 +42,70 @@ const Services = () => {
                         <h3>(Graphic/Game Designer)</h3>
                     </div>
                     <ul className="service__list">
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 0 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Led graphic design team for mobile game promoting organ donation.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 1 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Designed game assets using Photoshop and implemented in Unity Engine.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 2 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Placed game on NGO website portal, planned for Google Play Store.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 3 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Developed engaging game to effectively promote NGO's cause.</p>
                         </li>
                     </ul>
                 </article>
+
                 <article className="service">
                     <div className="service__head">
                         <h3>Dread Manor</h3>
                         <h3>(Indie Game Launch)</h3>
                     </div>
                     <ul className="service__list">
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 0 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Conceptualized, designed, and developed an indie horror mobile game using Unity.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 1 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Successfully launched on the Google Play Store, receiving positive feedback from players.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 2 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Designed intricate puzzle mechanics and atmospheric visuals to enhance player immersion.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 3 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Implemented an engaging solo mode with unique environments and challenging escape room elements.</p>
                         </li>
                     </ul>
                 </article>
+
                 <article className="service">
                     <div className="service__head">
                         <h3>WEBaniX Pvt. Ltd.</h3>
                         <h3>(Game Developer)</h3>
                     </div>
                     <ul className="service__list">
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 0 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Developed educational arcade games for gaming parlour using Unity</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 1 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Created a browser game using JavaScript, a Unity-based DNA-changing game, and an API-driven quiz game.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 2 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Maintained organized code repositories with Git version control.</p>
                         </li>
-                        <li>
-                            <BiCheck className="service__list-icon" />
+                        <li style={{ ["--i"]: 3 }}>
+                            <span className="point-icon"><BiCheck /></span>
                             <p>Leveraged WebSockets and API's for seamless integration with Arduino in the quiz game.</p>
                         </li>
                     </ul>

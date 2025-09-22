@@ -2,17 +2,32 @@ import React from "react";
 import "./contact.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
-import { BsWhatsapp } from "react-icons/bs";
-import { useRef } from "react";
+import { BsLinkedin } from "react-icons/bs";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
     const form = useRef();
+    const [toast, setToast] = useState({ message: "", type: "" });
+
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm("service_6ah3fkc", "template_nc4ja8j", form.current, "4kzQJCkCeVd1iMZkF");
-        e.target.reset();
+        setToast({ message: "Sending...", type: "info" });
+
+        emailjs
+        .sendForm("service_opdr7d8", "template_nc4ja8j", form.current, "4kzQJCkCeVd1iMZkF")
+        .then(() => {
+            setToast({ message: "✅ Message sent successfully!", type: "success" });
+            e.target.reset();
+        })
+        .catch(() => {
+            setToast({ message: "❌ Failed to send message. Please try again.", type: "error" });
+        });
+
+        // auto-hide after 3.5s
+        setTimeout(() => setToast({ message: "", type: "" }), 3500);
     };
+    
     return (
         <section section id="contact">
             <h5>Get In Touch</h5>
@@ -36,10 +51,10 @@ const Contact = () => {
                         </a>
                     </article>
                     <article className="contact__option">
-                        <BsWhatsapp className="contact__option-icon" />
-                        <h4>WhatsApp</h4>
-                        <h5>+918000294513</h5>
-                        <a href="https://api.whatsapp.com/send?phone=918000294513" target="_blank">
+                        <BsLinkedin className="contact__option-icon" />
+                        <h4>LinkedIn</h4>
+                        <h5>@harshitbhandari01</h5>
+                        <a href="https://www.linkedin.com/in/harshitbhandari01/" target="_blank">
                             Send a message
                         </a>
                     </article>
@@ -52,6 +67,8 @@ const Contact = () => {
                         Send Message
                     </button>
                 </form>
+                {/* show confirmation */}
+                {toast.message && <div className={`toast ${toast.type}`}>{toast.message}</div>}
             </div>
         </section>
     );

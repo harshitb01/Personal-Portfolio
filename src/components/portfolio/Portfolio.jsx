@@ -1,18 +1,18 @@
 import React from "react";
 import "./portfolio.css";
-import IMG1 from "../../assets/NM.jpeg";
-import IMG2 from "../../assets/Crispr.jpeg";
-import IMG3 from "../../assets/cover2.png";
-import IMG4 from "../../assets/Balancing.jpeg";
-import IMG5 from "../../assets/Monster.jpeg";
-import IMG6 from "../../assets/SWTQ.jpeg";
+import IMG1 from "../../assets/NM.png";
+import IMG2 from "../../assets/Crispr.jpg";
+import IMG3 from "../../assets/YouCannotGoBack.png";
+import IMG4 from "../../assets/BalancingGame.jpg";
+import IMG5 from "../../assets/MonsterMaker.png";
+import IMG6 from "../../assets/SoWhatsTheQuestion.png";
 
 const data = [
     {
         id: 1,
         image: IMG4,
         title: "The Balancing Game - Server based 5 player touchscreen game on saving environment (Using MonoGame)",
-        github: "https://jmp.sh/WOGr0K2A",
+        github: "https://jmp.sh/jAHatXIs",
         demo: "https://jmp.sh/jAHatXIs",
     },
     {

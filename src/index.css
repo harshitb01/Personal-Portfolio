@@ -1,112 +1,193 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/* -------------------------
+   PS5 THEME - Global Styles
+   ------------------------- */
+
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-    --color-bg: #1f1f38;
-    --color-bg-variant: #2c2c6c;
-    --color-primary: #4db5ff;
-    --color-primary-variant: rgba(77, 181, 255, 0.4);
+:root{
+     --color-bg: #0b0f17;
+    --color-bg-variant: #141a24;
+    --color-bg-variant-alt: rgba(255, 255, 255, 0.08);
+    --color-primary: #0076ff;
+    --color-primary-variant: #00a8ff;
+    --glass-border: rgba(255, 255, 255, 0.12);
     --color-white: #fff;
-    --color-light: rgba(255, 255, 255, 0.6);
-    --transition: all 400ms ease;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --transition: all 300ms cubic-bezier(.2, .9, .2, 1);
     --container-width-lg: 75%;
     --container-width-md: 86%;
     --container-width-sm: 90%;
+    
+     --color-bg: #0b0f17;
+    --color-bg-variant: #141a24;
+    --color-bg-variant-alt: rgba(255, 255, 255, 0.08);
+    --color-primary: #0076ff;
+    --color-primary-variant: #00a8ff;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --color-white: #fff;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --transition: all 300ms cubic-bezier(.2, .9, .2, 1);
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+    
+  /* Palette */
+  --ps5-bg-900: #05060a;               /* near black */
+  --ps5-bg-800: #0b0f17;               /* deep navy-black */
+  --ps5-surface: rgba(255,255,255,0.03); /* faint surface */
+  --ps5-glass: rgba(255,255,255,0.04);
+  --ps5-border: rgba(255,255,255,0.06);
+
+  --ps5-accent: #0076ff;               /* primary blue */
+  --ps5-accent-2: #00a8ff;             /* secondary blue */
+  --ps5-accent-faint: rgba(0,118,255,0.12);
+
+  --text-primary: #E6EEF8;
+  --text-muted: rgba(230,238,248,0.65);
+
+  /* spacing & sizing tokens */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.6rem;
+  --transition: 280ms cubic-bezier(.2,.9,.2,1);
+  --container-width-lg: 1100px;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
+/* Smooth scroll & default */
+html { scroll-behavior: smooth; background-color: #0b0f17; }
 body {
-    font-family: "Poppins", sans-serif;
-    background: var(--color-bg);
-    color: var(--color-white);
-    line-height: 1.7;
-    background-image: url(../src/assets/bg-texture.png);
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(0,120,255,0.04), transparent 6%),
+              linear-gradient(180deg, var(--ps5-bg-800) 0%, var(--ps5-bg-900) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-attachment: fixed;
 }
 
+/* optional subtle texture — keep commented if you don't have asset */
+/* body { background-image: url(../src/assets/bg-texture.png); background-repeat: repeat; } */
+
+/* Hide default scrollbar but keep for accessibility (touch devices show native) */
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 999px; }
+
+/* Container */
 .container {
-    width: var(--container-width-lg);
-    margin: 0 auto;
+  max-width: var(--container-width-lg);
+  width: min(96%, var(--container-width-lg));
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 500;
+/* Headings */
+h1,h2,h3,h4,h5{
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
 }
+h1{ font-size: 2.25rem; }
+h2{ font-size: 1.6rem; color: var(--ps5-accent); }
+h3{ font-size: 1.1rem; }
 
-h1 {
-    font-size: 2.5;
-}
+/* Sections */
+section{ margin-top: 5.5rem; padding-bottom: 1rem; }
+section > h5 { text-align: center; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+section > h2 { text-align: center; margin-bottom: 1.6rem; }
 
-section {
-    margin-top: 8rem;
-}
+/* Text utilities */
+.text-light { color: var(--text-muted); }
+.small { font-size: 0.85rem; color: var(--text-muted); }
 
-section > h2,
-section > h5 {
-    text-align: center;
-    color: var(--color-light);
-}
+/* Links */
+a { color: var(--ps5-accent); transition: color var(--transition); }
+a:hover, a:focus { color: var(--ps5-accent-2); text-decoration: none; outline: none; }
 
-section > h2 {
-    color: var(--color-primary);
-    margin-bottom: 3rem;
-}
-.text-light {
-    color: var(--color-light);
-}
-a {
-    color: var(--color-primary);
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--color-white);
-}
+/* Buttons */
 .btn {
-    width: max-content;
-    display: inline-block;
-    color: var(--color-primary);
-    padding: 0.75rem 1.2rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    border: 1px solid var(--color-primary);
-    transition: var(--transition);
+  display: inline-block;
+  padding: .7rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ps5-accent);
+  text-decoration: none;
+  line-height: 1;
 }
-
-.btn:hover {
-    background: var(--color-white);
-    color: var(--color-bg);
-    border-color: transparent;
-}
+.btn:hover{ transform: translateY(-3px); }
 
 .btn-primary {
-    background: var(--color-primary);
-    color: var(--color-bg);
+  background: linear-gradient(90deg, rgba(0,118,255,0.12), rgba(0,168,255,0.12));
+  border: 1px solid rgba(0,118,255,0.22);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,118,255,0.06);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--ps5-border);
+  color: var(--text-primary);
 }
 
-img {
-    display: block;
-    width: 100%;
-    object-fit: cover;
+/* Images */
+img { display:block; width:100%; height:auto; object-fit:cover; border-radius: var(--radius-sm); }
+
+/* Cards & glass surface helper */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid var(--ps5-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 30px rgba(3,6,15,0.6);
+}
+
+/* Accent vertical bar (use in components to get PS5 stripe) */
+.ps5-accent-bar {
+  width: 10px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--ps5-accent), var(--ps5-accent-2));
+  box-shadow: 0 8px 30px rgba(0,118,255,0.12);
+}
+
+/* Utility spacing & alignment */
+.flex { display:flex; align-items:center; gap: .75rem; }
+.center { display:grid; place-items:center; }
+.grid { display:grid; gap:1rem; }
+
+/* Forms / inputs (subtle glass style) */
+input, textarea, select {
+  background: rgba(255,255,255,0.02);
+  color: var(--text-primary);
+  border: 1px solid var(--ps5-border);
+  padding: .65rem .85rem;
+  border-radius: .6rem;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+input:focus, textarea:focus {
+  border-color: var(--ps5-accent);
+  box-shadow: 0 6px 28px rgba(0,118,255,0.06);
+  outline: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -115,3 +196,17 @@ img {
         overflow-x: hidden;
     }
 }
+
+/* Accessibility focus styles */
+a:focus, button:focus, .btn:focus {
+  outline: 3px solid rgba(0,118,255,0.12);
+  outline-offset: 3px;
+}
+
+/* Tiny animated float for hero sections (optional) */
+@keyframes subtle-float {
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+  100%{ transform: translateY(0); }
+}
+.float-slow { animation: subtle-float 14s ease-in-out infinite; }

@@ -27,25 +27,124 @@
     font-size: 1rem;
     text-align: center;
 }
+/* Points panel / animation (Services) */
+/* make list a clean panel */
 .service__list {
-    padding: 2rem;
-}
-.service__list li {
-    display: flex; /* Problem with Tick Marks */
-    gap: 1rem;
-    margin-bottom: 0.8rem;
-}
-.service__list-icon {
-    font-size: x-large;
-    color: var(--color-primary);
-    margin-top: 2px;
+    padding: 1.4rem;
+    list-style: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 1rem;
+    margin: 0;
 }
 
-.service__list p {
-    font-size: 0.9rem;
+/* li base state: hidden/offset so reveal + hover can animate */
+.service__list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    opacity: 0;
+    transform: translateY(10px) scale(1);
+    transition: transform 300ms cubic-bezier(.2,.9,.2,1), opacity 240ms;
+    line-height: 1.45;
 }
+
+/* icon circle (matches TopShowcase) */
+.point-icon {
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    color: #fff;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-variant));
+    box-shadow: 0 8px 22px rgba(0,118,255,0.12);
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms;
+}
+
+/* text */
+.service__list p {
+    margin: 0;
+    color: var(--color-light);
+    font-size: 0.95rem;
+}
+
+/* scroll reveal: when article has .revealed, animate list items with stagger using --i */
+.service.revealed .service__list li {
+    animation-name: serviceSlideUp;
+    animation-duration: 520ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: calc(var(--i) * 110ms);
+}
+
+/* hover animations: hovering list container triggers a pop stagger */
+.service__list:hover li {
+    animation-name: serviceHoverPop;
+    animation-duration: 420ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: calc(var(--i) * 70ms);
+}
+
+/* single item hover immediate feedback */
+.service__list li:hover {
+    animation-name: serviceHoverSingle;
+    animation-duration: 320ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,.9,.25,1);
+    animation-delay: 0ms;
+}
+
+/* Hover effect on icon */
+.service__list:hover .point-icon,
+.service__list li:hover .point-icon {
+    transform: scale(1.12);
+    box-shadow: 0 12px 32px rgba(0,118,255,0.18);
+}
+
+/* keyframes */
+@keyframes serviceSlideUp {
+    0%   { opacity: 0; transform: translateY(10px) scale(1); }
+    60%  { opacity: 1; transform: translateY(-6px) scale(1.02); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes serviceHoverPop {
+    0%   { opacity: 1; transform: translateY(0) scale(1); }
+    40%  { transform: translateY(-8px) scale(1.03); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes serviceHoverSingle {
+    0%   { transform: translateY(0) scale(1); }
+    50%  { transform: translateY(-6px) scale(1.04); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .service.revealed .service__list li,
+    .service__list:hover li,
+    .service__list li:hover {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .point-icon { transform: none !important; box-shadow: none !important; }
+}
+
+
 
 @media screen and (max-width: 1024px) {
+    .service__list { padding: 1rem; }
+    .point-icon { min-width: 22px; height: 22px; font-size: 0.85rem; }
     .services__container {
         width: 100%;
         max-width: 1200px;
@@ -63,4 +162,6 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+    .service__list { padding: 0.85rem; }
+    .point-icon { min-width: 20px; height: 20px; font-size: 0.8rem; margin-top: 0.2rem; }
 }

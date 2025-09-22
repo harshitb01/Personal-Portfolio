@@ -67,73 +67,91 @@ const data = [
 
 const TopShowcaseBriefing = () => {
     const videoRefs = useRef([]);
-
     useEffect(() => {
-        const options = {
-            threshold: 0.5, // Trigger when 50% of the video is in view
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                const iframe = entry.target;
-                const videoSrc = iframe.getAttribute("src");
-
-                iframe.setAttribute("src", videoSrc);
-
-                // if (entry.isIntersecting) {
-                //     // Add autoplay parameter to URL
-                //     iframe.setAttribute("src", `${videoSrc}&autoplay=1`);
-                // } else {
-                //     // Remove autoplay parameter to stop the video
-                //     iframe.setAttribute("src", videoSrc.replace("&autoplay=1", ""));
-                // }
-            });
-        }, options);
+        /* --- VIDEO observer (keeps your original behavior) --- */
+        const videoOptions = { threshold: 0.5 };
+        const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const iframe = entry.target;
+            // keep src as-is so the iframe stays ready (we could toggle autoplay here)
+            const videoSrc = iframe.getAttribute("src");
+            iframe.setAttribute("src", videoSrc);
+            // You can add autoplay logic if wanted:
+            // if (entry.isIntersecting) iframe.setAttribute("src", `${videoSrc}&autoplay=1`);
+            // else iframe.setAttribute("src", videoSrc.replace("&autoplay=1", ""));
+        });
+        }, videoOptions);
 
         videoRefs.current.forEach((ref) => {
-            observer.observe(ref);
+        if (ref) videoObserver.observe(ref);
         });
 
+        /* --- LIST observer: toggles animation and article.revealed (replays on each in/out) --- */
+        const listOptions = { threshold: 0.25 };
+        const listObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const listEl = entry.target;
+            const article = listEl.closest(".showcaseBriefing__item");
+            if (!article) return;
+
+            if (entry.isIntersecting) {
+            // add revealed to article so both iframe and list are affected
+            article.classList.add("revealed");
+            } else {
+            // remove it so animation can replay next time
+            article.classList.remove("revealed");
+            // force reflow to ensure animations restart smoothly on re-add (helps across browsers)
+            // eslint-disable-next-line no-unused-expressions
+            void listEl.offsetWidth;
+            }
+        });
+        }, listOptions);
+
+        const lists = document.querySelectorAll(".showcaseBriefing__points");
+        lists.forEach((list) => listObserver.observe(list));
+
         return () => {
-            // Clean up observer on component unmount
-            videoRefs.current.forEach((ref) => {
-                observer.unobserve(ref);
-            });
+        // cleanup both observers
+        videoRefs.current.forEach((ref) => {
+            if (ref) videoObserver.unobserve(ref);
+        });
+        lists.forEach((list) => listObserver.unobserve(list));
         };
     }, []);
+    
 
     return (
-        <section id="topShowcase">
-            <h5>Dread Manor</h5>
-            <h2>Mechanics Made</h2>
-            <div className="container showcaseBriefing__container">
-                {data.map(({ id, videoId, title, points }, index) => (
-                    <article key={id} className="showcaseBriefing__item">
-                        <h3>{title}</h3>
-                        <div className="showcaseBriefing__item-image">
-                            <iframe
-                                ref={(el) => (videoRefs.current[index] = el)}
-                                title={title}
-                                src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&mute=1&showinfo=0&rel=0&modestbranding=1&controls=1`}
-                                // frameBorder="0"
-                                // allow="autoplay; encrypted-media"
-                                allowFullScreen
-                            />
-                        </div>
-                        {/* <div className="portfolio__item-image ">
-                            <img src={image} alt={title} />
-                        </div> */}
-                        {/* <h3>{title}</h3> */}
-                        <ul className="showcaseBriefing__points">
-                            {points.map((point, i) => (
-                                <li key={i}>{point}</li>
-                            ))}
-                        </ul>
-                    </article>
-                ))}
+    <section id="topShowcase">
+      <h5>Dread Manor</h5>
+      <h2>Mechanics Made</h2>
+      <div className="container showcaseBriefing__container">
+        {data.map(({ id, videoId, title, points }, index) => (
+          <article key={id} className="showcaseBriefing__item">
+            <h3>{title}</h3>
+
+            <div className="showcaseBriefing__item-image">
+              <iframe
+                ref={(el) => (videoRefs.current[index] = el)}
+                title={title}
+                src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&mute=1&showinfo=0&rel=0&modestbranding=1&controls=0`}
+                allowFullScreen
+              />
             </div>
-        </section>
-    );
+
+            <ul className="showcaseBriefing__points">
+              {points.map((point, i) => (
+                // set CSS variable --i for staggering
+                <li key={i} style={{ ["--i"]: i }}>
+                  <span className="point-icon" aria-hidden="true">✓</span>
+                  <span className="point-text">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default TopShowcaseBriefing;

@@ -1,36 +1,93 @@
-nav {
-    background: rgba(0, 0, 0, 0.3);
-    width: max - content;
-    display: block;
-    padding: 0.7rem 1.7rem;
-    z-index: 2;
+nav.top-nav {
     position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    padding: 0 32px;
     display: flex;
-    gap: 0.8rem;
-    border-radius: 3rem;
-    backdrop-filter: blur(15px);
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 100%);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 250ms ease, opacity 250ms ease;
+    will-change: transform;
 }
-nav a {
+nav.top-nav.hidden { transform: translateY(-100%); opacity: 0.4; }
+nav.top-nav .top-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+nav.top-nav .menu-toggle {
+    display: none;
     background: transparent;
-    padding: 0.9rem;
-    border-radius: 50%;
-    display: flex;
-    color: var(--color-light);
-    font-size: 1.1rem;
+    border: none;
+    color: rgba(255,255,255,0.9);
+    font-size: 1.4rem;
+    line-height: 1;
+    padding: 6px 8px;
 }
-nav a:hover {
-    background: rgba(0, 0, 0, 0.3);
+nav.top-nav a {
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
 }
-nav a.active {
-    background: var(--color-bg);
-    color: var(--color-white);
+nav.top-nav a:hover { color: #fff; }
+nav.top-nav a.active { color: #fff; }
+
+.top-time {
+    color: rgba(255,255,255,0.9);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-variant-numeric: tabular-nums;
 }
 
 @media screen and (max-width: 600px) {
-    nav a {
-        padding: 0.5rem;
+    nav.top-nav {
+        padding: 0 16px;
+        height: 56px;
     }
+    nav.top-nav .top-links { gap: 16px; }
+    nav.top-nav a {
+        font-size: 0.8rem;
+    }
+}
+
+/* Responsive menu */
+@media screen and (max-width: 900px) {
+    nav.top-nav {
+        justify-content: space-between;
+    }
+    nav.top-nav .menu-toggle { display: block; }
+    nav.top-nav .top-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: grid;
+        grid-auto-rows: minmax(44px, auto);
+        gap: 0;
+        padding: 8px 12px 12px;
+        background: rgba(0,0,0,0.85);
+        backdrop-filter: blur(10px);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+    }
+    nav.top-nav.open .top-links {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    nav.top-nav .top-links a {
+        padding: 10px 6px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    nav.top-nav .top-links a:last-child { border-bottom: none; }
 }
