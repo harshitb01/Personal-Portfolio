@@ -116,8 +116,21 @@ export default function Header() {
     const row = rowRef.current;
     const el = cardRefs.current[currentIndex];
     if (!row || !el) return;
-    const scrollLeft = el.offsetLeft - 80;
-    row.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    const isMobile =
+      window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+    if (isMobile) {
+      // Center the active card in view on mobile to avoid cutoffs
+      const rowRect = row.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      const elCenter = el.offsetLeft + elRect.width / 2;
+      const target = elCenter - rowRect.width / 2;
+      const scrollLeft = Math.max(0, target);
+      row.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    } else {
+      // Keep desktop behavior
+      const scrollLeft = el.offsetLeft - 80;
+      row.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    }
   }, [currentIndex]);
 
   const currentProject = projects[currentIndex];

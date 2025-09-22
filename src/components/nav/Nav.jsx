@@ -98,9 +98,16 @@ const Nav = () => {
                     About
                 </a>
                 <a
-                    href="#portfolio"
-                    onClick={() => { setActiveNav("#portfolio"); setMenuOpen(false); }}
-                    className={activeNav === "#portfolio" ? "active" : ""}
+                    href="#experience"
+                    onClick={() => { setActiveNav("#experience"); setMenuOpen(false); }}
+                    className={activeNav === "#experience" ? "active" : ""}
+                >
+                    Skills
+                </a>
+                <a
+                    href="#services"
+                    onClick={() => { setActiveNav("#services"); setMenuOpen(false); }}
+                    className={activeNav === "#services" ? "active" : ""}
                 >
                     Work
                 </a>
@@ -113,13 +120,6 @@ const Nav = () => {
                     className={activeNav === "#contact" ? "active" : ""}
                 >
                     Connect
-                </a>
-                <a
-                    href="#contact"
-                    onClick={() => { setActiveNav("#contact"); setMenuOpen(false); }}
-                    className={activeNav === "#contact" ? "active" : ""}
-                >
-                    Hire
                 </a>
             </div>
         </nav>

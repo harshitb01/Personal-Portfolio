@@ -3,6 +3,7 @@ import "./footer.css";
 import { BsLinkedin } from "react-icons/bs";
 import { FiInstagram } from "react-icons/fi";
 import { IoLogoTwitter } from "react-icons/io";
+import ResumePDF from "../../assets/Resume.pdf";
 
 const Footer = () => {
     return (
@@ -15,22 +16,19 @@ const Footer = () => {
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#topShowcase">Top ShowCase</a>
-                </li>
-                <li>
                     <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#portfolio">Portfolio</a>
                 </li>
                 <li>
                     <a href="#experience">Skills</a>
                 </li>
                 <li>
-                    <a href="#services">Work Experience</a>
+                    <a href="#services">Work</a>
                 </li>
                 <li>
-                    <a href="#contact">Contact</a>
+                    <a href={ResumePDF} target="_blank" rel="noopener noreferrer">Resume</a>
+                </li>
+                <li>
+                    <a href="#contact">Connect</a>
                 </li>
             </ul>
             <div className="footer__socials">

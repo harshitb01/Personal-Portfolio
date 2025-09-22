@@ -17,20 +17,7 @@
 }
 
 :root{
-     --color-bg: #0b0f17;
-    --color-bg-variant: #141a24;
-    --color-bg-variant-alt: rgba(255, 255, 255, 0.08);
-    --color-primary: #0076ff;
-    --color-primary-variant: #00a8ff;
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --color-white: #fff;
-    --color-light: rgba(255, 255, 255, 0.7);
-    --transition: all 300ms cubic-bezier(.2, .9, .2, 1);
-    --container-width-lg: 75%;
-    --container-width-md: 86%;
-    --container-width-sm: 90%;
-    
-     --color-bg: #0b0f17;
+    --color-bg: #0b0f17;
     --color-bg-variant: #141a24;
     --color-bg-variant-alt: rgba(255, 255, 255, 0.08);
     --color-primary: #0076ff;
