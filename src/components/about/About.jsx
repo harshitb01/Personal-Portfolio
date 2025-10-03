@@ -37,11 +37,15 @@ const About = () => {
                         </article>
                     </div>
                     <p>
-                        <br />Experienced Unity Game Developer with a successful launch of 
-                        an indie mobile horror game on the Play Store. Working full-time at Webanix Pvt Ltd, 
-                        specializing in diverse game genres like DNA-altering simulations, 
-                        gene-mutation games, and API-driven quiz games with WebSocket integration. 
-                        Eager to bring creativity and technical depth to impactful projects at leading gaming studios.
+                        <br />Unity Game Developer skilled in gameplay programming,
+                        mobile optimization, and multiplayer systems. Currently leading
+                        the game development team at Webanix, delivering client
+                        projects and original prototypes using Unity, JS and Monogame.
+                        Successfully launched Dread Manor on the Play Store and
+                        achieved a top 250 global ranking in Brackeys GameJam 2025
+                        out of 2300 entries. Proficient in C#, Blender, and AI Integration,
+                        with a strong focus on performance, visuals, and player
+                        experience.
                     </p>
                     <br />
                     <a href="#contact" className="btn btn-primary">
