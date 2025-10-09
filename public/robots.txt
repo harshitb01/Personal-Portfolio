@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+# Replace 'your-site' with your actual Netlify subdomain before deploy
+Sitemap: https://harshitsportfolio.netlify.app/sitemap.xml
 
