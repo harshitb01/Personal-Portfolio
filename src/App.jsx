@@ -18,9 +18,10 @@ import Footer from "./components/footer/Footer";
 
 const App = () => {
     const section = typeof window !== "undefined" ? window.location.hash || "#home" : "#home";
+    const baseOrigin = typeof window !== "undefined" ? window.location.origin : "https://harshitsportfolio.netlify.app";
     const og = useMemo(() => {
         const base = {
-            url: typeof window !== "undefined" ? `${window.location.origin}${window.location.pathname}${window.location.hash}` : "",
+            url: `${baseOrigin}${typeof window !== "undefined" ? `${window.location.pathname}${window.location.hash}` : "/"}`,
             image: LOGO,
             title: "Harshit Bhandari | Unity Game Developer Portfolio",
             description: "Unity games, AI systems, multiplayer gameplay, and experimental interactive projects.",
@@ -49,7 +50,11 @@ const App = () => {
             };
         }
         return base;
-    }, [section]);
+    }, [section, baseOrigin]);
+
+    const ogImageAbsolute = og.image && typeof og.image === "string"
+        ? (og.image.startsWith("http") ? og.image : `${baseOrigin}${og.image}`)
+        : og.image;
 
     return (
         <>
@@ -63,14 +68,17 @@ const App = () => {
                 <meta property="og:title" content={og.title} />
                 <meta property="og:description" content={og.description} />
                 <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Harshit Bhandari Portfolio" />
+                <meta property="og:locale" content="en_US" />
                 <meta property="og:url" content={og.url} />
-                <meta property="og:image" content={og.image} />
+                <meta property="og:image" content={ogImageAbsolute} />
+                <meta property="og:image:alt" content={og.title} />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={og.title} />
                 <meta name="twitter:description" content={og.description} />
-                <meta name="twitter:image" content={og.image} />
+                <meta name="twitter:image" content={ogImageAbsolute} />
 
                 {/* Canonical */}
                 <link rel="canonical" href={typeof window !== "undefined" ? `${window.location.origin}${window.location.pathname}` : ""} />
