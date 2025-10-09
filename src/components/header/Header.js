@@ -143,6 +143,7 @@ export default function Header() {
           src={`https://www.youtube.com/embed/${currentProject.videoId}?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=${currentProject.videoId}&modestbranding=1&rel=0`}
           frameBorder="0"
           allow="autoplay; encrypted-media"
+          loading="lazy"
           allowFullScreen
           title={currentProject.title}
         />
@@ -174,7 +175,7 @@ export default function Header() {
               }`}
               tabIndex={0}
             >
-              <img src={project.thumbnail} alt={project.title} />
+              <img loading="lazy" src={project.thumbnail} alt={project.title} />
             </div>
           ))}
         </div>

@@ -44,6 +44,11 @@ const Footer = () => {
             </div>
             <div className="footer__copyright">
                 <small>&copy; Harshit Bhandari . All rights reserved.</small>
+                <p>
+                    If you're curious about Unity,
+                    check the official <a href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity</a> site
+                    and <a href="https://docs.unity3d.com/Manual/index.html" target="_blank" rel="noopener noreferrer">Unity Manual</a>.
+                </p>
             </div>
         </footer>
     );
