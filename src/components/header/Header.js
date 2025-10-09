@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./header.css";
-import IMGNM from "../../assets/NM.png";
-import IMGCrispr from "../../assets/Crispr.jpg";
-import IMGYouCannotGoBack from "../../assets/YouCannotGoBack.png";
-import IMGBalancingGame from "../../assets/BalancingGame.jpg";
-import IMGMonsterMaker from "../../assets/MonsterMaker.png";
-import IMGSoWhatsTheQuestion from "../../assets/SoWhatsTheQuestion.png";
-import IMGDreadManor from "../../assets/DreadManor.jpeg";
+import IMGNM from "../../assets/NM.webp";
+import IMGCrispr from "../../assets/Crispr.webp";
+import IMGYouCannotGoBack from "../../assets/YouCannotGoBack.webp";
+import IMGBalancingGame from "../../assets/BalancingGame.webp";
+import IMGMonsterMaker from "../../assets/MonsterMaker.webp";
+import IMGSoWhatsTheQuestion from "../../assets/SoWhatsTheQuestion.webp";
+import IMGDreadManor from "../../assets/DreadManor.webp";
 
 const projects = [
   {
