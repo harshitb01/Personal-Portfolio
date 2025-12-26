@@ -2,7 +2,7 @@ import React from "react";
 import "./footer.css";
 import { BsLinkedin } from "react-icons/bs";
 import { FiInstagram } from "react-icons/fi";
-import { IoLogoTwitter } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
 import ResumePDF from "../../assets/Resume.pdf";
 
 const Footer = () => {
@@ -38,8 +38,8 @@ const Footer = () => {
                 <a href="https://www.instagram.com/harshitb2006/">
                     <FiInstagram />
                 </a>
-                <a href="https://twitter.com/Harshit04411820">
-                    <IoLogoTwitter />
+                <a href="https://github.com/harshitb01">
+                    <FaGithub />
                 </a>
             </div>
             <div className="footer__copyright">
